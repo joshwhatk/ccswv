@@ -1,0 +1,14 @@
+.Footer {
+  border-top: 1px solid $gray;
+  margin-top: 3rem;
+  padding: 2rem 0 2rem 0;
+
+  &-copyright {
+    font-size: rem-calc(16);
+    text-align: center;
+
+    @include breakpoint(mediumlarge) {
+      text-align: right;
+    }
+  }
+}

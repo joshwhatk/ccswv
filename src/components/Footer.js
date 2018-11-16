@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
 export default class Footer extends React.Component {
   render() {
     return (
       <footer className="Footer">
-        <div className="Footer-copyright">
-          &copy; Copyright Covenant Christian School {new Date().getFullYear()}.
+        <div className="grid-container Footer-copyright">
+          &copy; Covenant Christian School {new Date().getFullYear()}.
         </div>
       </footer>
-    );
+    )
   }
 }
