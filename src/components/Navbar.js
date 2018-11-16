@@ -1,18 +1,18 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from 'react'
+import { Link } from 'gatsby'
 import logo from '../images/logo.png';
-import DropdownMenu from './navigation/DropdownMenu';
-import classnames from 'classnames';
+import DropdownMenu from './navigation/DropdownMenu'
+import classnames from 'classnames'
 
 export default class Navbar extends React.Component {
   state = {
     isMobile: true,
-    isMobileMenuClosed: true
-  };
-  mobileWidth = 768;
+    isMobileMenuClosed: true,
+  }
+  mobileWidth = 768
 
   render() {
-    console.log('state', this.state);
+    console.log('state', this.state)
     return (
       <header className="HeaderNavigation">
         <div
@@ -42,7 +42,7 @@ export default class Navbar extends React.Component {
         <nav
           className={classnames('Navigation', 'top-bar', {
             'is-open': this.state.isMobile && !this.state.isMobileMenuClosed,
-            'is-closed': this.state.isMobile && this.state.isMobileMenuClosed
+            'is-closed': this.state.isMobile && this.state.isMobileMenuClosed,
           })}
           id="main-menu"
         >
@@ -139,39 +139,39 @@ export default class Navbar extends React.Component {
           </div>
         </nav>
       </header>
-    );
+    )
   }
 
   componentDidMount() {
-    this.updateDimensions();
-    window.addEventListener('resize', this.updateDimensions);
+    this.updateDimensions()
+    window.addEventListener('resize', this.updateDimensions)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateDimensions);
+    window.removeEventListener('resize', this.updateDimensions)
   }
 
   updateDimensions = () => {
     if (typeof window === 'undefined') {
-      return;
+      return
     }
 
     //-- https://stackoverflow.com/a/34475071/1476317
     var w = window,
       d = document,
       screenWidth =
-        w.innerWidth || d.documentElement.clientWidth || d.body.clientWidth;
+        w.innerWidth || d.documentElement.clientWidth || d.body.clientWidth
 
     if (screenWidth > this.mobileWidth && this.state.isMobile) {
-      this.setState({ isMobile: false });
+      this.setState({ isMobile: false })
     }
     if (screenWidth <= this.mobileWidth && !this.state.isMobile) {
-      this.setState({ isMobile: true });
+      this.setState({ isMobile: true })
     }
-  };
+  }
 
   toggleMenu = () => {
-    let isMobileMenuClosed = !this.state.isMobileMenuClosed;
-    this.setState({ isMobileMenuClosed });
-  };
+    let isMobileMenuClosed = !this.state.isMobileMenuClosed
+    this.setState({ isMobileMenuClosed })
+  }
 }
