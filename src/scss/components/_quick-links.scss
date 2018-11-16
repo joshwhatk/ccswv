@@ -1,0 +1,15 @@
+.QuickLinks {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.5rem 0;
+
+  li {
+    &:not(:first-child) {
+      border-left: 1px solid black;
+    }
+  }
+
+  .menu a {
+    padding: 0 1rem;
+  }
+}

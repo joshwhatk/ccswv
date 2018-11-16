@@ -1,0 +1,58 @@
+.HeaderNavigation {
+  @include breakpoint(medium down) {
+    position: fixed;
+    width: 100vw;
+  }
+}
+
+.Navigation {
+  @include breakpoint(medium down) {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+
+    &.is-closed {
+      min-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      opacity: 0;
+    }
+
+    &.is-open {
+      min-height: 100vh;
+    }
+  }
+
+  &-logo {
+    &--desktop {
+      display: none;
+
+      @include breakpoint(mediumlarge) {
+        display: block;
+      }
+    }
+  }
+
+  &-menu {
+    flex-direction: column;
+
+    @include breakpoint(mediumlarge) {
+      flex-direction: row;
+    }
+
+    & > li {
+      margin-bottom: 1rem;
+
+      @include breakpoint(mediumlarge) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &-submenu {
+    @include breakpoint(medium down) {
+      position: relative !important;
+    }
+  }
+}

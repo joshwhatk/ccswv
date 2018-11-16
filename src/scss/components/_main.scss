@@ -1,0 +1,6 @@
+.Main {
+  padding-top: 40px;
+  @include breakpoint(mediumlarge) {
+    padding-top: 0;
+  }
+}
