@@ -1,0 +1,3 @@
+.container {
+  @include xy-grid-container($width: 1024px);
+}

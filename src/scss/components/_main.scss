@@ -1,0 +1,20 @@
+.Main {
+  padding-top: 40px;
+  @include breakpoint(mediumlarge) {
+    padding-top: 0;
+  }
+}
+
+.button {
+  font-weight: $global-weight-bold;
+}
+
+p,
+div,
+ol,
+ul,
+blockquote,
+em,
+strong {
+  font-size: $paragraph-font-size;
+}

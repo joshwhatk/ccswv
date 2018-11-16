@@ -1,14 +1,21 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Navbar from '../components/Navbar'
-import './all.sass'
+import Navbar from './Navbar'
+import Footer from './Footer'
+import '../scss/main.scss'
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet title="Home | Gatsby + Netlify CMS" />
+    <Helmet titleTemplate="%s | Covenant Christian School" title="Home">
+      <link
+        href="https://fonts.googleapis.com/css?family=Lato:400,700"
+        rel="stylesheet"
+      />
+    </Helmet>
     <Navbar />
-    <div>{children}</div>
+    <div className="Main">{children}</div>
+    <Footer />
   </div>
 )
 

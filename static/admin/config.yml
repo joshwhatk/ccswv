@@ -2,6 +2,9 @@ backend:
   name: git-gateway
   branch: master
 
+publish_mode: editorial_workflow
+display_url: https://covenantchristianwv.com
+
 media_folder: static/img
 public_folder: /img
 
@@ -27,6 +30,13 @@ collections:
         name: "about"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/index.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
       - file: "src/pages/products/index.md"

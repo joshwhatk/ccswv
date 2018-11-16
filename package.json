@@ -1,10 +1,12 @@
 {
-  "name": "gatsby-starter-netlify-cms",
-  "description": "Example Gatsby, and Netlify CMS project",
+  "name": "ccswv",
+  "description": "Covenant Christian School’s Website",
   "version": "1.1.3",
-  "author": "Austin Green",
+  "author": "Joshua Friend",
   "dependencies": {
     "bulma": "^0.7.0",
+    "classnames": "^2.2.6",
+    "foundation-sites": "^6.5.1",
     "gatsby": "^2.0.0",
     "gatsby-image": "^2.0.10",
     "gatsby-plugin-netlify": "^2.0.0",
@@ -45,5 +47,10 @@
   "devDependencies": {
     "prettier": "^1.7.4",
     "rimraf": "^2.6.2"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true
   }
 }
