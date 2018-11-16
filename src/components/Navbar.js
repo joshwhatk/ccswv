@@ -141,23 +141,8 @@ export default class Navbar extends React.Component {
     window.removeEventListener('mousemove', this.setDesktop)
   }
 
-  updateDimensions = () => {
-    if (typeof window === 'undefined') {
-      return
-    }
-
-    //-- https://stackoverflow.com/a/34475071/1476317
-    var w = window,
-      d = document,
-      screenWidth =
-        w.innerWidth || d.documentElement.clientWidth || d.body.clientWidth
-
-    if (screenWidth > this.mobileWidth && this.state.isMobile) {
-      this.setState({ isMobile: false })
-    }
-    if (screenWidth <= this.mobileWidth && !this.state.isMobile) {
-      this.setState({ isMobile: true })
-    }
+  setDesktop = () => {
+    this.setState({ isMobile: false })
   }
 
   toggleMenu = () => {

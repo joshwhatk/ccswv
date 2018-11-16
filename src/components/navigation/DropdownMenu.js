@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
+import React from 'react'
+import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
 
 export default class DropdownMenu extends React.Component {
   static propTypes = {
@@ -9,27 +9,27 @@ export default class DropdownMenu extends React.Component {
     children: PropTypes.element.isRequired,
     timeout: PropTypes.number,
     isMobile: PropTypes.bool.isRequired,
-    className: PropTypes.string
-  };
+    className: PropTypes.string,
+  }
 
   state = {
     isActive: false,
-    toggleStarted: null
-  };
+    toggleStarted: null,
+  }
 
-  timeout = null;
+  static defaultProps = {
+    timeout: 500,
+  }
+
+  timeout = null
 
   render() {
-    let { children, link, name, timeout, className } = this.props;
-    console.log('state', this.state);
-    children = this.addSubmenuClassesToChildren(children);
-    if (!timeout) {
-      timeout = 500;
-    }
-    let classNames = ['is-dropdown-submenu-parent', 'opens-right'];
+    let { children, link, name, className } = this.props
+    children = this.addSubmenuClassesToChildren(children)
+    let classNames = ['is-dropdown-submenu-parent', 'opens-right']
 
     if (className) {
-      classNames = classNames.concat(className.split(' '));
+      classNames = classNames.concat(className.split(' '))
     }
     return (
       <li
@@ -37,74 +37,75 @@ export default class DropdownMenu extends React.Component {
         role="menuitem"
         aria-haspopup="true"
         aria-label={name}
-        onMouseEnter={() => this.toggleSubmenu(true)}
-        onMouseLeave={() => this.toggleSubmenu(false, timeout)}
+        onMouseEnter={this.openSubmenu}
+        onMouseLeave={this.closeSubmenu}
       >
         <Link to={link} onClick={this.handleMobileClicks}>
           {name}
         </Link>
         {children}
       </li>
-    );
+    )
   }
 
   componentWillUnmount() {
-    clearTimeout(this.timeout);
+    clearTimeout(this.timeout)
+  }
+
+  openSubmenu = () => {
+    this.toggleSubmenu(true)
+  }
+
+  closeSubmenu = () => {
+    this.toggleSubmenu(false, this.props.timeout)
   }
 
   toggleSubmenu = (isActive, timeout = 0) => {
-    let toggleStarted = Date.now();
-    this.setState({ toggleStarted });
+    let toggleStarted = Date.now()
+    this.setState({ toggleStarted })
     //-- Reset timeout for Mobile as mobile does not have an effective MouseOut
     if (this.props.isMobile) {
-      timeout = 0;
+      timeout = 0
     }
     this.timeout = setTimeout(() => {
       if (this.state.toggleStarted !== toggleStarted) {
-        return;
+        return
       }
-      this.setState({ isActive });
-    }, timeout);
-  };
+      this.setState({ isActive })
+    }, timeout)
+  }
 
   addSubmenuClassesToChildren(children) {
-    return React.Children.map(children, (child) => {
-      let childClassNames = child.props.className.split(' ');
+    return React.Children.map(children, child => {
+      let childClassNames = child.props.className.split(' ')
       let className = [
         'menu',
         'submenu',
         'is-dropdown-submenu',
         'first-sub',
-        'vertical'
-      ];
+        'vertical',
+      ]
       if (this.state.isActive) {
-        className.push('js-dropdown-active');
+        className.push('js-dropdown-active')
       }
       className = className
-        .filter((item) => {
-          return childClassNames.indexOf(item) === -1;
+        .filter(item => {
+          return childClassNames.indexOf(item) === -1
         })
         .concat(childClassNames)
-        .join(' ');
+        .join(' ')
 
       return React.cloneElement(child, {
         role: 'menubar',
-        className
-      });
-    });
+        className,
+      })
+    })
   }
 
-  handleMobileClicks = (event) => {
+  handleMobileClicks = event => {
     if (this.props.isMobile) {
-      event.preventDefault();
-      if (!this.state.isActive) {
-        this.toggleSubmenu(true);
-        return;
-      }
-      if (this.state.isActive) {
-        this.toggleSubmenu(false);
-        return;
-      }
+      event.preventDefault()
+      this.toggleSubmenu(!this.state.isActive)
     }
-  };
+  }
 }
