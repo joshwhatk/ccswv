@@ -7,7 +7,12 @@ import '../scss/main.scss'
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet titleTemplate="%s | Covenant Christian School" title="Home" />
+    <Helmet titleTemplate="%s | Covenant Christian School" title="Home">
+      <link
+        href="https://fonts.googleapis.com/css?family=Lato:400,700"
+        rel="stylesheet"
+      />
+    </Helmet>
     <Navbar />
     <div className="Main">{children}</div>
     <Footer />

@@ -1,8 +1,13 @@
 @import '~foundation-sites/scss/util/util';
 @import 'colors';
 
+$paragraph-font-size: rem-calc(20);
+
 // 1. Global
 // ---------
+
+$body-font-family: 'Lato', 'Helvetica Neue', Helvetica, Roboto, Arial,
+  sans-serif;
 
 $foundation-palette: (
   primary: #584cb4,
