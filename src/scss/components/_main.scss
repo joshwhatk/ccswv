@@ -4,3 +4,17 @@
     padding-top: 0;
   }
 }
+
+.button {
+  font-weight: $global-weight-bold;
+}
+
+p,
+div,
+ol,
+ul,
+blockquote,
+em,
+strong {
+  font-size: $paragraph-font-size;
+}

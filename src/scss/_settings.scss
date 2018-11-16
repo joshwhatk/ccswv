@@ -11,10 +11,10 @@ $body-font-family: 'Lato', 'Helvetica Neue', Helvetica, Roboto, Arial,
 
 $foundation-palette: (
   primary: #584cb4,
-  secondary: #767676,
+  secondary: #cea764,
   success: #3adb76,
   warning: #ffae00,
-  alert: #cc4b37
+  alert: #cc4b37,
 );
 
 @include add-foundation-colors;
@@ -29,13 +29,17 @@ $breakpoints: (
   large: 1024px,
   xlarge: 1200px,
   xxlarge: 1440px,
-  xxxlarge: 1801px
+  xxxlarge: 1801px,
 );
 $breakpoint-classes: (small medium mediumlarge large);
+
+// 11. Button
+// ----------
+
+$button-hollow-border-width: 2px;
 
 // 55. Top Bar
 // -----------
 
 $topbar-background: $white;
-$topbar-submenu-background: $topbar-background;
 $topbar-unstack-breakpoint: mediumlarge;
