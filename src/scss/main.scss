@@ -45,6 +45,7 @@ $foundation-visibility-classes: true;
 
 @include foundation-initializer();
 
+@import 'components/grid';
 @import 'components/main';
 @import 'components/quick-links';
 @import 'components/navigation';
