@@ -3,6 +3,8 @@ backend:
   branch: master
 
 publish_mode: editorial_workflow
+display_url: https://covenantchristianwv.com
+
 media_folder: static/img
 public_folder: /img
 
