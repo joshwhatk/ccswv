@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import logo from '../images/logo.png';
+import logo from '../img/logo.png'
 import DropdownMenu from './navigation/DropdownMenu'
 import classnames from 'classnames'
 
