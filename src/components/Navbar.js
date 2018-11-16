@@ -28,16 +28,7 @@ export default class Navbar extends React.Component {
           />
           <div className="title-bar-title">Menu</div>
         </div>
-        <nav className="QuickLinks show-for-mediumlarge">
-          <ul className="menu">
-            <li>
-              <Link to="/calendar">Calendar</Link>
-            </li>
-            <li>
-              <Link to="/">GradeLink</Link>
-            </li>
-          </ul>
-        </nav>
+        <QuickLinks className="show-for-mediumlarge" />
 
         <nav
           className={classnames('Navigation', 'top-bar', {
@@ -137,6 +128,7 @@ export default class Navbar extends React.Component {
               Schedule a Tour
             </a>
           </div>
+          <QuickLinks className="hide-for-mediumlarge" />
         </nav>
       </header>
     )
@@ -175,3 +167,16 @@ export default class Navbar extends React.Component {
     this.setState({ isMobileMenuClosed })
   }
 }
+
+const QuickLinks = ({ className }) => (
+  <nav className={classnames('QuickLinks', className)}>
+    <ul className="menu">
+      <li>
+        <Link to="/calendar">Calendar</Link>
+      </li>
+      <li>
+        <Link to="/">GradeLink</Link>
+      </li>
+    </ul>
+  </nav>
+)
