@@ -1,19 +1,20 @@
 ---
 templateKey: 'about-page'
 path: /about
-title: About our values
+title: About Us
 ---
-### Shade-grown coffee
-Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
 
-### Single origin
-Single-origin coffee is coffee grown within a single known geographic origin. Sometimes, this is a single farm or a specific collection of beans from a single country. The name of the coffee is then usually the place it was grown to whatever degree available.
+## “Preparing God's children for the 21st century and eternity.”
 
-### Sustainable farming
-Sustainable agriculture is farming in sustainable ways based on an understanding of ecosystem services, the study of relationships between organisms and their environment. What grows where and how it is grown are a matter of choice and careful consideration for nature and communities.
+![https://via.placeholder.com/150](https://via.placeholder.com/150)
 
-### Direct sourcing
-Direct trade is a form of sourcing practiced by some coffee roasters. Advocates of direct trade practices promote direct communication and price negotiation between buyer and farmer, along with systems that encourage and incentivize quality.
+Rev. Dr. Edward W. Williamson and his wife, Loretta, started Covenant Day School in the Fall of 1990. He was the founding pastor of Covenant Evangelical Methodist Church, which houses the school. Loretta knew that with a growing number of both parents working, there was an even greater need for childcare. With most of the area's childcare providers offering nothing more than babysitting, she desired to offer a program where children could learn how to read, write and count, as well as learn about God. In the Fall of 1991, additional grades were added and Covenant Christian School came into existence. God has continued to bless the ministry, although it has gone through various changes throughout the years. We are committed to working with other Christian schools in the area to insure that every child comes to know Jesus as their personal Savior and Lord and receives the quality education that God desires for him/her to have.
 
-### Reinvest profits
-We want to truly empower the communities that bring amazing coffee to you. That’s why we reinvest 20% of our profits into farms, local businesses and schools everywhere our coffee is grown. You can see the communities grow and learn more about coffee farming on our blog.
+### Why Covenant Christian School?
+
+![https://via.placeholder.com/150](https://via.placeholder.com/150)
+
+My name is David Friend and I am the Headmaster of Covenant Christian School. Thank you for taking the time to visit with us. What makes Covenant different from other schools? We believe there are several things. First, our teachers love to teach and enjoy working with young people. They are not here because **they have to be**. They are here because **they want to be** and because they feel they are called here by God. Our students excel, knowing that they are loved and in a secure environment. As a ministry of Covenant Evangelical Methodist Church, our facilities are not as fancy as some schools. However, what we lack in pizazz, we make up for with love and caring. Secondly, we are all family here. I treat the students as if they were my own. That is not to say we don't have problems. God knows we have our share. We just care enough about each other to work them out. Our goal is not to fill up young minds with useless facts that they will never use again, but to stir up a desire in them for increasing knowledge and show them how and where to find answers to the problems of life.
+
+**Academic excellence is not our only goal.** If it was, we would be known as a great school who turns out "educated fools". The Bible says, "A fool says in his heart there is no God." We commit ourselves to helping young people come to a saving knowledge of Jesus Christ and then teaching them how to be His disciples in a world where believing in God is now socially unacceptable.  
+Please take time to view our website and if God lays it on your heart, contact us for more information or a tour. Our prayer is that God will send us the families we can minister to and our prayer for you is that He will guide you in the education of your children. This is your most important responsibility.
