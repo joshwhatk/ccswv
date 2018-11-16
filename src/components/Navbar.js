@@ -12,7 +12,6 @@ export default class Navbar extends React.Component {
   mobileWidth = 768
 
   render() {
-    console.log('state', this.state)
     return (
       <header className="HeaderNavigation">
         <div
@@ -31,7 +30,7 @@ export default class Navbar extends React.Component {
         <QuickLinks className="show-for-mediumlarge" />
 
         <nav
-          className={classnames('Navigation', 'top-bar', {
+          className={classnames('Navigation', 'top-bar', 'grid-container', {
             'is-open': this.state.isMobile && !this.state.isMobileMenuClosed,
             'is-closed': this.state.isMobile && this.state.isMobileMenuClosed,
           })}
@@ -114,33 +113,32 @@ export default class Navbar extends React.Component {
               </DropdownMenu>
             </ul>
           </div>
+          <QuickLinks className="hide-for-mediumlarge" />
           <div className="top-bar-right">
             <a
               href="tel:304-292-6050"
-              className="button primary hide-for-mediumlarge"
+              className="button primary hollow hide-for-mediumlarge"
             >
               Schedule a Tour
             </a>
             <a
               href="mailto:dcfriend@me.com?subject=I would like to schedule a tour of Covenant"
-              className="button primary show-for-mediumlarge"
+              className="button primary hollow show-for-mediumlarge"
             >
               Schedule a Tour
             </a>
           </div>
-          <QuickLinks className="hide-for-mediumlarge" />
         </nav>
       </header>
     )
   }
 
   componentDidMount() {
-    this.updateDimensions()
-    window.addEventListener('resize', this.updateDimensions)
+    window.addEventListener('mousemove', this.setDesktop, { once: true })
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateDimensions)
+    window.removeEventListener('mousemove', this.setDesktop)
   }
 
   updateDimensions = () => {
@@ -168,6 +166,7 @@ export default class Navbar extends React.Component {
   }
 }
 
+//-- QuickLinks Component
 const QuickLinks = ({ className }) => (
   <nav className={classnames('QuickLinks', className)}>
     <ul className="menu">
