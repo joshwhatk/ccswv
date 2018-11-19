@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { AdminHomePageTemplate } from '../../templates/home-page'
+import { HomePageTemplate } from '../../templates/home-page'
 
 const HomePagePreview = ({ entry, widgetFor }) => (
-  <AdminHomePageTemplate
+  <HomePageTemplate
     title={entry.getIn(['data', 'title'])}
     content={widgetFor('body')}
   />

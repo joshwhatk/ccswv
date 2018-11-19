@@ -8,10 +8,22 @@ export const HomePageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
-    <section className="section section--gradient">
+    <section className="section">
       <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
+        <header className="responsive-embed widescreen">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/Oyw-faxa4Nk?rel=0&iv_load_policy=3&playsinline=1&modestbranding=1&color=white&showinfo=0&origin=https%3A%2F%2Fwww.covenantchristianwv.com"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
+        </header>
+      </div>
+      <div className="container">
+        <div className="grid-x">
+          <div className="mediumlarge-10 mediumlarge-offset-1">
             <div className="section">
               <h1 className="title is-size-3 has-text-weight-bold is-bold-light">
                 {title}
@@ -25,28 +37,7 @@ export const HomePageTemplate = ({ title, content, contentComponent }) => {
   )
 }
 
-export const AdminHomePageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
-
-  return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-AdminHomePageTemplate.propTypes = HomePageTemplate.propTypes = {
+HomePageTemplate.propTypes = HomePageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
