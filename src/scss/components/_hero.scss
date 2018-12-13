@@ -1,0 +1,17 @@
+.Hero {
+  text-align: center;
+  // padding: 10rem;
+  padding: 4rem;
+
+  &--home {
+    // background-image: url(../img/headers/home-mobile.jpg);
+
+    @include breakpoint(mediumlarge) {
+      // background-image: url(../img/headers/home1.jpg);
+    }
+
+    .Hero {
+      //
+    }
+  }
+}

@@ -3,32 +3,32 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import header from '../img/headers/home.jpg'
+import mobileHeader from '../img/headers/home-mobile.jpg'
 
 export const HomePageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
     <section className="section">
-      <div className="container">
-        <header className="responsive-embed widescreen">
-          <iframe
-            title="CCS Introduction"
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/Oyw-faxa4Nk?rel=0&iv_load_policy=3&playsinline=1&modestbranding=1&color=white&showinfo=0&origin=https%3A%2F%2Fwww.covenantchristianwv.com"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </header>
+      <div className="Hero Hero--home">
+        <h1 className="Hero-title">{title}</h1>
       </div>
       <div className="container">
         <div className="grid-x">
           <div className="mediumlarge-10 mediumlarge-offset-1">
             <div className="section">
-              <h1 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h1>
+              <header className="responsive-embed widescreen">
+                <iframe
+                  title="CCS Introduction"
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/Oyw-faxa4Nk?rel=0&iv_load_policy=3&playsinline=1&modestbranding=1&color=white&showinfo=0&origin=https%3A%2F%2Fwww.covenantchristianwv.com"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </header>
               <PageContent className="content" content={content} />
             </div>
           </div>
