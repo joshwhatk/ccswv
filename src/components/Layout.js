@@ -12,6 +12,7 @@ const TemplateWrapper = ({ children }) => (
         href="https://fonts.googleapis.com/css?family=Lato:400,700"
         rel="stylesheet"
       />
+      <meta name="google-site-verification" content="JVgsBPiCrPxli8eNle1dXs_H34mIS0k9CKi6C33WFCY" />
     </Helmet>
     <Navbar />
     <main className="Main">{children}</main>
