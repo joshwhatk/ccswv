@@ -12,6 +12,9 @@
 }
 
 .Navigation {
+  align-items: flex-end;
+  padding: 0;
+
   @include breakpoint(medium down) {
     display: block;
     overflow: hidden;
@@ -37,6 +40,10 @@
 
       @include breakpoint(mediumlarge) {
         display: block;
+
+        a {
+          padding: 0 1rem 0 0 !important;
+        }
       }
     }
   }
@@ -46,14 +53,7 @@
 
     @include breakpoint(mediumlarge) {
       flex-direction: row;
-    }
-
-    & > li {
-      margin-bottom: 1rem;
-
-      @include breakpoint(mediumlarge) {
-        margin-bottom: 0;
-      }
+      align-items: flex-end;
     }
   }
 
