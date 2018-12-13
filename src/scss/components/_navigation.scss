@@ -1,6 +1,9 @@
+:root {
+  --mobile-nav-height: 100vh;
+}
+
 .HeaderNavigation {
   @include breakpoint(medium down) {
-    position: fixed;
     width: 100vw;
   }
 
@@ -10,6 +13,7 @@
 
 .Navigation {
   @include breakpoint(medium down) {
+    display: block;
     overflow: hidden;
     max-height: 0;
     opacity: 1;
@@ -23,7 +27,7 @@
     }
 
     &.is-open {
-      min-height: 100vh;
+      min-height: var(--mobile-nav-height); //100vh;
     }
   }
 
@@ -56,6 +60,13 @@
   &-submenu {
     @include breakpoint(medium down) {
       position: relative !important;
+    }
+  }
+
+  .top-bar-right {
+    @include breakpoint(medium down) {
+      text-align: center;
+      margin-top: 2rem;
     }
   }
 }

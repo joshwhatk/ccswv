@@ -3,13 +3,35 @@
   justify-content: flex-end;
   margin: 0.5rem 0 0 0;
 
+  @include breakpoint(medium down) {
+    width: 100vw;
+    align-items: center;
+    flex-direction: column;
+  }
+
   li {
     &:not(:first-child) {
-      border-left: 1px solid black;
+      @include breakpoint(mediumlarge) {
+        border-left: 1px solid black;
+      }
+    }
+
+    @include breakpoint(medium down) {
+      margin-bottom: 1rem;
     }
   }
 
-  .menu a {
-    padding: 0 1rem;
+  .menu {
+    a {
+      padding: 0 1rem;
+    }
+
+    @include breakpoint(medium down) {
+      flex-direction: column;
+
+      a {
+        padding: 0.7rem 1rem;
+      }
+    }
   }
 }

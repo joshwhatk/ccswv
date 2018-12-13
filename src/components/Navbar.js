@@ -11,6 +11,8 @@ export default class Navbar extends React.Component {
   }
   mobileWidth = 768
 
+  header = React.createRef()
+
   render() {
     return (
       <header className="HeaderNavigation">
@@ -35,6 +37,7 @@ export default class Navbar extends React.Component {
             'is-closed': this.state.isMobile && this.state.isMobileMenuClosed,
           })}
           id="main-menu"
+          ref={this.header}
         >
           <div className="top-bar-left">
             <ul className="Navigation-menu dropdown menu align-middle">
@@ -53,6 +56,7 @@ export default class Navbar extends React.Component {
                 link="/about"
                 name="About Us"
                 isMobile={this.state.isMobile}
+                resetHeight={this.setNavHeight}
               >
                 <ul className="menu Navigation-submenu">
                   <li role="menuitem">
@@ -92,6 +96,7 @@ export default class Navbar extends React.Component {
                 link="/"
                 name="More..."
                 isMobile={this.state.isMobile}
+                resetHeight={this.setNavHeight}
               >
                 <ul className="menu Navigation-submenu">
                   <li role="menuitem">
@@ -148,6 +153,12 @@ export default class Navbar extends React.Component {
   toggleMenu = () => {
     let isMobileMenuClosed = !this.state.isMobileMenuClosed
     this.setState({ isMobileMenuClosed })
+    this.setNavHeight()
+  }
+
+  setNavHeight = () => {
+    let header = this.header.current
+    header.style.setProperty('--mobile-nav-height', `${header.scrollHeight}px`)
   }
 }
 

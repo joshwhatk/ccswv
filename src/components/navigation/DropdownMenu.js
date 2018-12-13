@@ -10,6 +10,7 @@ export default class DropdownMenu extends React.Component {
     timeout: PropTypes.number,
     isMobile: PropTypes.bool.isRequired,
     className: PropTypes.string,
+    resetHeight: PropTypes.func.isRequired,
   }
 
   state = {
@@ -106,6 +107,7 @@ export default class DropdownMenu extends React.Component {
     if (this.props.isMobile) {
       event.preventDefault()
       this.toggleSubmenu(!this.state.isActive)
+      this.props.resetHeight()
     }
   }
 }
