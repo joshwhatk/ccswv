@@ -69,4 +69,17 @@
       margin-top: 2rem;
     }
   }
+
+  li {
+    a.is-active:not(.ignore-active) {
+      @include breakpoint(mediumlarge) {
+        background-color: $primary-color;
+        color: $white;
+
+        &:after {
+          border-color: $white transparent transparent;
+        }
+      }
+    }
+  }
 }

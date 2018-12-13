@@ -41,7 +41,11 @@ export default class DropdownMenu extends React.Component {
         onMouseEnter={this.openSubmenu}
         onMouseLeave={this.closeSubmenu}
       >
-        <Link to={link} onClick={this.handleMobileClicks}>
+        <Link
+          to={link}
+          onClick={this.handleMobileClicks}
+          getProps={this.isActive}
+        >
           {name}
         </Link>
         {children}
@@ -109,5 +113,9 @@ export default class DropdownMenu extends React.Component {
       this.toggleSubmenu(!this.state.isActive)
       this.props.resetHeight()
     }
+  }
+
+  isActive = ({ isCurrent }) => {
+    return isCurrent ? { className: 'is-active' } : null
   }
 }
