@@ -12,12 +12,13 @@ export const HomePageTemplate = ({ title, content, contentComponent }) => {
       <div className="container">
         <header className="responsive-embed widescreen">
           <iframe
+            title="CCS Introduction"
             width="560"
             height="315"
             src="https://www.youtube.com/embed/Oyw-faxa4Nk?rel=0&iv_load_policy=3&playsinline=1&modestbranding=1&color=white&showinfo=0&origin=https%3A%2F%2Fwww.covenantchristianwv.com"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           />
         </header>
       </div>
