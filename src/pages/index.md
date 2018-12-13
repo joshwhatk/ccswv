@@ -9,10 +9,10 @@ Covenant Christian School was founded in 1990 and is the largest ministry of Cov
 
 ​We offer:
 
-1. Christ centered education,
+1. Christ-centered education,
 2. Academic Excellence, and
 3. A Safe learning environment.
 
-> "But you will receive power when the Holy Spirit has come upon you, and you will be my witnesses in Jerusalem and in all Judea and Samaria, and to the end of the earth."
+> “But you will receive power when the Holy Spirit has come upon you, and you will be my witnesses in Jerusalem and in all Judea and Samaria, and to the end of the earth.”
 >
 > - ​Acts 1:8

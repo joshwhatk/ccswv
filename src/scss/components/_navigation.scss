@@ -1,15 +1,22 @@
+:root {
+  --mobile-nav-height: 100vh;
+}
+
 .HeaderNavigation {
   @include breakpoint(medium down) {
-    position: fixed;
     width: 100vw;
   }
 
   border-bottom: 1px solid $gray;
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
 }
 
 .Navigation {
+  align-items: flex-end;
+  padding: 0;
+
   @include breakpoint(medium down) {
+    display: block;
     overflow: hidden;
     max-height: 0;
     opacity: 1;
@@ -23,7 +30,7 @@
     }
 
     &.is-open {
-      min-height: 100vh;
+      min-height: var(--mobile-nav-height); //100vh;
     }
   }
 
@@ -33,6 +40,10 @@
 
       @include breakpoint(mediumlarge) {
         display: block;
+
+        a {
+          padding: 0 1rem 0 0 !important;
+        }
       }
     }
   }
@@ -42,20 +53,33 @@
 
     @include breakpoint(mediumlarge) {
       flex-direction: row;
-    }
-
-    & > li {
-      margin-bottom: 1rem;
-
-      @include breakpoint(mediumlarge) {
-        margin-bottom: 0;
-      }
+      align-items: flex-end;
     }
   }
 
   &-submenu {
     @include breakpoint(medium down) {
       position: relative !important;
+    }
+  }
+
+  .top-bar-right {
+    @include breakpoint(medium down) {
+      text-align: center;
+      margin-top: 2rem;
+    }
+  }
+
+  li {
+    a.is-active:not(.ignore-active) {
+      @include breakpoint(mediumlarge) {
+        background-color: $primary-color;
+        color: $white;
+
+        &:after {
+          border-color: $white transparent transparent;
+        }
+      }
     }
   }
 }

@@ -11,6 +11,8 @@ export default class Navbar extends React.Component {
   }
   mobileWidth = 768
 
+  header = React.createRef()
+
   render() {
     return (
       <header className="HeaderNavigation">
@@ -35,6 +37,7 @@ export default class Navbar extends React.Component {
             'is-closed': this.state.isMobile && this.state.isMobileMenuClosed,
           })}
           id="main-menu"
+          ref={this.header}
         >
           <div className="top-bar-left">
             <ul className="Navigation-menu dropdown menu align-middle">
@@ -46,32 +49,47 @@ export default class Navbar extends React.Component {
                 </Link>
               </li>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/" getProps={this.isActive}>
+                  Home
+                </Link>
               </li>
               <DropdownMenu
                 className="Navigation-submenuWrapper"
                 link="/about"
                 name="About Us"
                 isMobile={this.state.isMobile}
+                resetHeight={this.setNavHeight}
               >
                 <ul className="menu Navigation-submenu">
                   <li role="menuitem">
-                    <Link to="/about">About Us</Link>
+                    <Link to="/about" getProps={this.isActive}>
+                      About Us
+                    </Link>
                   </li>
                   <li role="menuitem">
-                    <Link to="/statement-of-beliefs">Statement Of Beliefs</Link>
+                    <Link to="/statement-of-beliefs" getProps={this.isActive}>
+                      Statement Of Beliefs
+                    </Link>
                   </li>
                   <li role="menuitem">
-                    <Link to="/preschool">Preschool</Link>
+                    <Link to="/preschool" getProps={this.isActive}>
+                      Preschool
+                    </Link>
                   </li>
                   <li role="menuitem">
-                    <Link to="/kindergarten">Kindergarten</Link>
+                    <Link to="/kindergarten" getProps={this.isActive}>
+                      Kindergarten
+                    </Link>
                   </li>
                   <li role="menuitem">
-                    <Link to="/elementary">Elementary</Link>
+                    <Link to="/elementary" getProps={this.isActive}>
+                      Elementary
+                    </Link>
                   </li>
                   <li role="menuitem">
-                    <Link to="/middle">Middle</Link>
+                    <Link to="/middle" getProps={this.isActive}>
+                      Middle
+                    </Link>
                   </li>
                 </ul>
               </DropdownMenu>
@@ -85,20 +103,27 @@ export default class Navbar extends React.Component {
                 </a>
               </li>
               <li>
-                <Link to="/contact-us">Contact Us</Link>
+                <Link to="/contact-us" getProps={this.isActive}>
+                  Contact Us
+                </Link>
               </li>
               <DropdownMenu
-                className="Navigation-submenuWrapper"
-                link="/"
+                className="Navigation-submenuWrapper ignore-active"
+                link="#"
                 name="More..."
                 isMobile={this.state.isMobile}
+                resetHeight={this.setNavHeight}
               >
                 <ul className="menu Navigation-submenu">
                   <li role="menuitem">
-                    <Link to="/local-supporters">Local Supporters</Link>
+                    <Link to="/local-supporters" getProps={this.isActive}>
+                      Local Supporters
+                    </Link>
                   </li>
                   <li role="menuitem">
-                    <Link to="/in-memory">In Memory</Link>
+                    <Link to="/in-memory" getProps={this.isActive}>
+                      In Memory
+                    </Link>
                   </li>
                   <li role="menuitem">
                     <a
@@ -141,6 +166,10 @@ export default class Navbar extends React.Component {
     window.removeEventListener('mousemove', this.setDesktop)
   }
 
+  isActive = ({ isCurrent }) => {
+    return isCurrent ? { className: 'is-active' } : null
+  }
+
   setDesktop = () => {
     this.setState({ isMobile: false })
   }
@@ -148,6 +177,12 @@ export default class Navbar extends React.Component {
   toggleMenu = () => {
     let isMobileMenuClosed = !this.state.isMobileMenuClosed
     this.setState({ isMobileMenuClosed })
+    this.setNavHeight()
+  }
+
+  setNavHeight = () => {
+    let header = this.header.current
+    header.style.setProperty('--mobile-nav-height', `${header.scrollHeight}px`)
   }
 }
 
