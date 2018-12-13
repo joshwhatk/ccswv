@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-import header from '../img/headers/home.jpg'
-import mobileHeader from '../img/headers/home-mobile.jpg'
 
 export const HomePageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
