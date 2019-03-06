@@ -1,8 +1,8 @@
 ---
-templateKey: 'home-page'
+templateKey: home-page
 title: Welcome to Covenant Christian School!
+description: Home
 ---
-
 ## Now Enrolling Preschool, Kindergarten, Elementary, and Middle School!
 
 Covenant Christian School was founded in 1990 and is the largest ministry of Covenant EMC.
@@ -13,6 +13,4 @@ Covenant Christian School was founded in 1990 and is the largest ministry of Cov
 2. Academic Excellence, and
 3. A Safe learning environment.
 
-> “But you will receive power when the Holy Spirit has come upon you, and you will be my witnesses in Jerusalem and in all Judea and Samaria, and to the end of the earth.”
->
-> - ​Acts 1:8
+> We are now accepting applications for children three years old through eighth grade.
