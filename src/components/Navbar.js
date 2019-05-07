@@ -194,7 +194,7 @@ const QuickLinks = ({ className }) => (
         <Link to="/calendar">Calendar</Link>
       </li>
       <li>
-        <Link to="https://secure.gradelink.com/gradelink">GradeLink</Link>
+        <a href="https://secure.gradelink.com/gradelink">GradeLink</a>
       </li>
     </ul>
   </nav>
