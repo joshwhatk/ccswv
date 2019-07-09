@@ -8,6 +8,32 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "home"
+    label: "Home"
+    files:
+      - file: "src/pages/index.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: Meta Description, name: description, widget: string}
+          - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "pages"
+    label: "Pages"
+    folder: "src/pages"
+    create: true
+    slug: "{{slug}}"
+    filter: {field: "templateKey", value: "content-page"}
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "content-page"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list"}
+
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
@@ -20,29 +46,3 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-
-  - name: "pages"
-    label: "Pages"
-    folder: "src/pages/content"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "content-page"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
-
-
-  - name: "home"
-    label: "Home"
-    files:
-      - file: "src/pages/index.md"
-        label: "Home"
-        name: "home"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
-          - {label: Description, name: description, widget: string}
