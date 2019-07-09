@@ -1,6 +1,5 @@
 ---
-templateKey: 'about-page'
-path: /statement-of-beliefs
+templateKey: 'content-page'
 title: Statement of Beliefs
 ---
 
@@ -60,5 +59,5 @@ We believe in the literal return of Jesus Christ to receive His bride, the Churc
 
 ---
 
-For more information you can check out our church’s website:  
+For more information you can check out our church’s website:
 <a class="button secondary hollow" href="http://www.covenantemc.com/">Covenant EMC</a> <a class="button secondary hollow" href="http://emchurch.org/">Evangelical Methodist</a>

@@ -1,5 +1,5 @@
 ---
-templateKey: about-page
+templateKey: content-page
 title: About Us
 ---
 ## “Preparing God's children for the 21st century and eternity.”

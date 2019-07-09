@@ -1,6 +1,5 @@
 ---
-templateKey: 'about-page'
-path: /contact-us
+templateKey: 'content-page'
 title: Contact Us
 
 ---
