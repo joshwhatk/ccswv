@@ -6,7 +6,7 @@ navigation:
       - externalUrl: /
         title: Home
   - menu:
-      - pageUrl: About Us
+      - pageUrl: Contact Us
         title: About Us
       - pageUrl: Statement of Beliefs
         title: Statement of Beliefs
