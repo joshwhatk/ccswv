@@ -1,5 +1,6 @@
 ---
 templateKey: utility
+title: navigation
 navigation:
   - menu:
       - externalUrl: /
