@@ -21,7 +21,46 @@ collections:
           - {label: YouTube Video ID, name: youtubeId, widget: string}
           - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "pages"
+      - file: "src/pages/util/navigation.md"
+        label: "Navigation"
+        name: "navigation"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "utility"}
+          - {label: "Title", name: "title", widget: "hidden",  default: "navigation"}
+          - {
+            label: Navigation,
+            name: navigation,
+            label_singular: Menu,
+            widget: list,
+            fields:
+              [
+                {
+                  label: Menu,
+                  name: menu,
+                  label_singular: Item,
+                  widget: list,
+                  hint: "Either a Page URL or an External URL can be used, but *not* both.",
+                  fields:
+                    [
+                      { label: Title, name: title, widget: string },
+                      {
+                        label: Page URL,
+                        name: pageUrl,
+                        widget: relation,
+                        collection: pages,
+                        searchFields: ["title", "slug"],
+                        valueField: title,
+                        hint: "Once set, to clear this value, you will need to delete this menu item and add a new one.",
+                        required: false
+                      },
+                      { label: Other URL, name: externalUrl, widget: string, required: false },
+                      { label: Open in New Tab, name: openInNewTab, widget: boolean, required: false }
+                    ]
+                },
+              ],
+          }
+
+  - name: pages
     label: Pages
     label_singular: Page
     folder: "src/pages"
