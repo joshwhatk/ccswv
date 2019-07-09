@@ -9,8 +9,8 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(true)
   const [isMobileMenuClosed, setIsMobileMenuClosed] = useState(true)
   const header = React.createRef()
-  const setDesktop = () => {
-    setIsMobile(false)
+  const setDesktop = event => {
+    setIsMobile(event.sourceCapabilities.firesTouchEvents)
   }
   const isActive = ({ isCurrent }) => {
     return isCurrent ? { className: 'is-active' } : null
