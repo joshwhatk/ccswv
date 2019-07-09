@@ -50,7 +50,6 @@ collections:
                         collection: pages,
                         searchFields: ["title", "slug"],
                         valueField: title,
-                        hint: "Once set, to clear this value, you will need to delete this menu item and add a new one.",
                         required: false
                       },
                       { label: Other URL, name: externalUrl, widget: string, required: false },
