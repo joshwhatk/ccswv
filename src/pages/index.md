@@ -2,6 +2,7 @@
 templateKey: home-page
 title: Welcome to Covenant Christian School!
 description: Home
+youtubeId: Oyw-faxa4Nk
 ---
 ## Now Enrolling Preschool, Kindergarten, Elementary, and Middle School!
 

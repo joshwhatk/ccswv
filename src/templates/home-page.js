@@ -4,8 +4,14 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
-export const HomePageTemplate = ({ title, content, contentComponent }) => {
+export const HomePageTemplate = ({
+  title,
+  youtubeId,
+  content,
+  contentComponent,
+}) => {
   const PageContent = contentComponent || Content
+  const src = `https://www.youtube.com/embed/${youtubeId}?rel=0&iv_load_policy=3&playsinline=1&modestbranding=1&color=white&showinfo=0&origin=https%3A%2F%2Fwww.covenantchristianwv.com`
 
   return (
     <section className="section">
@@ -16,17 +22,19 @@ export const HomePageTemplate = ({ title, content, contentComponent }) => {
         <div className="grid-x">
           <div className="mediumlarge-10 mediumlarge-offset-1">
             <div className="section">
-              <header className="responsive-embed widescreen">
-                <iframe
-                  title="CCS Introduction"
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/Oyw-faxa4Nk?rel=0&iv_load_policy=3&playsinline=1&modestbranding=1&color=white&showinfo=0&origin=https%3A%2F%2Fwww.covenantchristianwv.com"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </header>
+              {youtubeId && (
+                <header className="responsive-embed widescreen">
+                  <iframe
+                    title="CCS Introduction"
+                    width="560"
+                    height="315"
+                    src={src}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </header>
+              )}
               <PageContent className="content" content={content} />
             </div>
           </div>
@@ -38,6 +46,7 @@ export const HomePageTemplate = ({ title, content, contentComponent }) => {
 
 HomePageTemplate.propTypes = HomePageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
+  youtubeId: PropTypes.string,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
 }
@@ -50,6 +59,7 @@ const HomePage = ({ data }) => {
       <HomePageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
+        youtubeId={post.frontmatter.youtubeId}
         content={post.html}
       />
     </Layout>
@@ -68,6 +78,7 @@ export const homePageQuery = graphql`
       html
       frontmatter {
         title
+        youtubeId
       }
     }
   }
