@@ -1,4 +1,6 @@
 ---
-templateKey: 'utility'
+templateKey: utility
+navigation:
+  - {}
 ---
 
