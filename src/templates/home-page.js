@@ -1,11 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import Helmet from 'react-helmet'
+
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
 export const HomePageTemplate = ({
   title,
+  description,
   youtubeId,
   content,
   contentComponent,
@@ -15,6 +18,9 @@ export const HomePageTemplate = ({
 
   return (
     <section className="section">
+      <Helmet>
+        <meta name="description" content={description}></meta>
+      </Helmet>
       <div className="Hero Hero--home">
         <h1 className="Hero-title">{title}</h1>
       </div>
@@ -46,6 +52,7 @@ export const HomePageTemplate = ({
 
 HomePageTemplate.propTypes = HomePageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
+  description: PropTypes.string,
   youtubeId: PropTypes.string,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
@@ -59,6 +66,7 @@ const HomePage = ({ data }) => {
       <HomePageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
+        description={post.frontmatter.description}
         youtubeId={post.frontmatter.youtubeId}
         content={post.html}
       />
@@ -78,6 +86,7 @@ export const homePageQuery = graphql`
       html
       frontmatter {
         title
+        description
         youtubeId
       }
     }
