@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import logo from '../img/logo.png'
 import DropdownMenu from './navigation/DropdownMenu'
+import Navigation from './navigation/Navigation'
 import classnames from 'classnames'
 import { useStaticQuery, graphql } from 'gatsby'
 
@@ -36,7 +37,11 @@ const Navbar = () => {
     }
   })
 
-  const data = useStaticQuery(graphql`
+  const {
+    markdownRemark: {
+      frontmatter: { navigation },
+    },
+  } = useStaticQuery(graphql`
     query NavigationQuery {
       markdownRemark(frontmatter: { title: { eq: "navigation" } }) {
         id
@@ -54,7 +59,9 @@ const Navbar = () => {
       }
     }
   `)
-  console.log(data)
+  const menuItems = navigation.map(item => {
+    return item.menu
+  })
 
   return (
     <header className="HeaderNavigation">
@@ -82,6 +89,7 @@ const Navbar = () => {
         ref={header}
       >
         <div className="top-bar-left">
+          <Navigation navigation={menuItems} />
           <ul className="Navigation-menu dropdown menu align-middle">
             <li className="Navigation-logo Navigation-logo--desktop">
               <Link to="/">
