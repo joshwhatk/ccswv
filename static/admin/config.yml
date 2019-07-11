@@ -39,7 +39,6 @@ collections:
                   name: menu,
                   label_singular: Item,
                   widget: list,
-                  hint: "Either a Page URL or an External URL can be used, but *not* both.",
                   fields:
                     [
                       { label: Title, name: title, widget: string },
@@ -50,7 +49,8 @@ collections:
                         collection: pages,
                         searchFields: ["title", "slug"],
                         valueField: title,
-                        required: false
+                        required: false,
+                        hint: "Either a Page URL or an “Other URL” can be used, but *not* both.",
                       },
                       { label: Other URL, name: externalUrl, widget: string, required: false },
                       { label: Open in New Tab, name: openInNewTab, widget: boolean, required: false }

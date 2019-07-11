@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 export default class DropdownMenu extends React.Component {
   static propTypes = {
-    link: PropTypes.string.isRequired,
+    link: PropTypes.string,
     name: PropTypes.string.isRequired,
     children: PropTypes.element.isRequired,
     timeout: PropTypes.number,
@@ -26,6 +26,9 @@ export default class DropdownMenu extends React.Component {
 
   render() {
     let { children, link, name, className } = this.props
+    if (!link) {
+      link = '#'
+    }
     children = this.addSubmenuClassesToChildren(children)
     let classNames = ['is-dropdown-submenu-parent', 'opens-right']
 
