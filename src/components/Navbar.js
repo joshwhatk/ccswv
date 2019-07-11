@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
-import logo from '../img/logo.png'
-import DropdownMenu from './navigation/DropdownMenu'
 import Navigation from './navigation/Navigation'
 import classnames from 'classnames'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -12,9 +10,6 @@ const Navbar = () => {
   const header = React.createRef()
   const setDesktop = event => {
     setIsMobile(event.sourceCapabilities.firesTouchEvents)
-  }
-  const isActive = ({ isCurrent }) => {
-    return isCurrent ? { className: 'is-active' } : null
   }
   const setNavHeight = () => {
     let navHeader = header.current
@@ -89,104 +84,11 @@ const Navbar = () => {
         ref={header}
       >
         <div className="top-bar-left">
-          <Navigation navigation={menuItems} />
-          <ul className="Navigation-menu dropdown menu align-middle">
-            <li className="Navigation-logo Navigation-logo--desktop">
-              <Link to="/">
-                <figure className="Navigation-logo-image">
-                  <img src={logo} alt="Covenant Christian School" />
-                </figure>
-              </Link>
-            </li>
-            <li>
-              <Link to="/" getProps={isActive}>
-                Home
-              </Link>
-            </li>
-            <DropdownMenu
-              className="Navigation-submenuWrapper"
-              link="/about"
-              name="About Us"
-              isMobile={isMobile}
-              resetHeight={setNavHeight}
-            >
-              <ul className="menu Navigation-submenu">
-                <li role="menuitem">
-                  <Link to="/about" getProps={isActive}>
-                    About Us
-                  </Link>
-                </li>
-                <li role="menuitem">
-                  <Link to="/statement-of-beliefs" getProps={isActive}>
-                    Statement Of Beliefs
-                  </Link>
-                </li>
-                <li role="menuitem">
-                  <Link to="/preschool" getProps={isActive}>
-                    Preschool
-                  </Link>
-                </li>
-                <li role="menuitem">
-                  <Link to="/kindergarten" getProps={isActive}>
-                    Kindergarten
-                  </Link>
-                </li>
-                <li role="menuitem">
-                  <Link to="/elementary" getProps={isActive}>
-                    Elementary
-                  </Link>
-                </li>
-                <li role="menuitem">
-                  <Link to="/middle" getProps={isActive}>
-                    Middle
-                  </Link>
-                </li>
-              </ul>
-            </DropdownMenu>
-            <li>
-              <a
-                href="https://www.egsnetwork.com/gift2?giftid=18AB29EC0A5449E"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Donate
-              </a>
-            </li>
-            <li>
-              <Link to="/contact-us" getProps={isActive}>
-                Contact Us
-              </Link>
-            </li>
-            <DropdownMenu
-              className="Navigation-submenuWrapper ignore-active"
-              link="#"
-              name="More..."
-              isMobile={isMobile}
-              resetHeight={setNavHeight}
-            >
-              <ul className="menu Navigation-submenu">
-                <li role="menuitem">
-                  <Link to="/local-supporters" getProps={isActive}>
-                    Local Supporters
-                  </Link>
-                </li>
-                <li role="menuitem">
-                  <Link to="/in-memory" getProps={isActive}>
-                    In Memory
-                  </Link>
-                </li>
-                <li role="menuitem">
-                  <a
-                    href="https://online.factsmgt.com/signin/3D76J"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Pay Tuition
-                  </a>
-                </li>
-              </ul>
-            </DropdownMenu>
-          </ul>
+          <Navigation
+            navigation={menuItems}
+            isMobile={isMobile}
+            setNavHeight={setNavHeight}
+          />
         </div>
         <QuickLinks className="hide-for-mediumlarge" />
         <div className="top-bar-right">
